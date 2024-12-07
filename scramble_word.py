@@ -21,6 +21,7 @@ GREEN = (0, 255, 0)
 FONT_LARGE = pygame.font.Font(None, 64)
 FONT_MEDIUM = pygame.font.Font(None, 48)
 FONT_SMALL = pygame.font.Font(None, 32)
+FONT_WATERMARK = pygame.font.Font(None, 24)  # Small font for watermark
 
 # List of words
 word_list = ["python", "computer", "programming", "developer", "keyboard", "algorithm", "interface", "software"]
@@ -74,6 +75,10 @@ while running:
     round_display = FONT_SMALL.render(f"Round: {round_counter + 1}/{rounds}", True, GREEN)
     screen.blit(round_display, (650, 40))
 
+    # Display watermark
+    watermark = FONT_WATERMARK.render("Created by rudra", True, BLACK)
+    screen.blit(watermark, (WIDTH - 180, HEIGHT - 30))  # Position in the bottom-right corner
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -102,6 +107,8 @@ while running:
         final_score_text = FONT_MEDIUM.render(f"Final Score: {score}", True, BLACK)
         screen.blit(end_text, (WIDTH // 2 - 150, HEIGHT // 3))
         screen.blit(final_score_text, (WIDTH // 2 - 150, HEIGHT // 3 + 80))
+        # Display watermark on game over screen
+        screen.blit(watermark, (WIDTH - 180, HEIGHT - 30))
         pygame.display.flip()
         pygame.time.wait(3000)
         running = False
