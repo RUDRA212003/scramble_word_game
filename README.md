@@ -35,10 +35,3 @@ A fun **Word Scramble Game** built using Python and the **Pygame** library. Test
 - Pygame module (`pip install pygame`)
 
 ---
-
-## How to Run the Game 🖥️
-
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/yourusername/word-scramble-game.git
-   cd word-scramble-game
